@@ -339,8 +339,26 @@ section{padding-block:60px}
   background:linear-gradient(140deg,rgba(23,34,82,.95),rgba(13,19,48,.95));
   padding:36px;box-shadow:0 24px 60px rgba(4,7,25,.55);
 }
-.trainer-side{display:flex;flex-direction:column;gap:22px;align-items:flex-start;width:220px}
-.avatar{width:132px;height:132px;display:block}
+.trainer-side{display:flex;flex-direction:column;gap:24px;align-items:flex-start;width:200px}
+.portrait{
+  position:relative;width:176px;height:176px;flex:none;
+  border-radius:20px;padding:3px;
+  background:linear-gradient(140deg,#2ea8ff,#ff3ea5 52%,#ffd21e);
+  box-shadow:0 18px 44px rgba(4,7,25,.6);
+}
+.portrait img{
+  display:block;width:100%;height:100%;max-width:100%;
+  object-fit:cover;object-position:center 18%;
+  border-radius:17px;
+}
+.portrait .verified{
+  position:absolute;right:-9px;bottom:-9px;
+  width:36px;height:36px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#63e6a0;color:#062a1c;
+  border:3px solid #131c42;
+}
+.portrait .verified .ic{width:17px;height:17px;stroke-width:3.2}
 .stat .big{font-family:"Archivo",sans-serif;font-stretch:120%;font-weight:900;font-size:38px;line-height:1;
   -webkit-background-clip:text;background-clip:text;color:transparent}
 .stat:nth-of-type(1) .big{background-image:linear-gradient(92deg,#2ea8ff,#22e3ee)}
@@ -429,7 +447,7 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-block:36px 46px;
   .brand > span:last-child{display:none}
   .logo-chip img{height:22px}
   .day-date{margin-left:0;width:100%}
-  .avatar{width:96px;height:96px}
+  .portrait{width:132px;height:132px}
 }
 </style>
 
@@ -911,18 +929,10 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-block:36px 46px;
     <div class="sec-head"><span class="ic-box"><svg class="ic ic-lg"><use href="#i-users"/></svg></span><h2>Your trainer</h2><span class="rule"></span></div>
     <div class="trainer">
       <div class="trainer-side">
-        <svg class="avatar" viewBox="0 0 132 132" aria-hidden="true">
-          <defs>
-            <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#2ea8ff"/><stop offset="45%" stop-color="#ff3ea5"/><stop offset="100%" stop-color="#ffd21e"/>
-            </linearGradient>
-          </defs>
-          <circle cx="66" cy="66" r="62" fill="none" stroke="url(#ring)" stroke-width="4"/>
-          <circle cx="66" cy="66" r="54" fill="#111a3d"/>
-          <text x="66" y="80" text-anchor="middle" font-family="Archivo, sans-serif" font-size="42" font-weight="900" fill="#f4f6ff" letter-spacing="1">DH</text>
-          <circle cx="112" cy="104" r="13" fill="#63e6a0"/>
-          <path d="m106 104 4.5 4.5 8-8.5" fill="none" stroke="#062a1c" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <div class="portrait">
+          <img src="david-hooi.jpg" width="880" height="880" alt="David Hooi, AI Adoption Specialist and Founder of D Action Consultancy.">
+          <span class="verified" title="HRD Corp Accredited Trainer"><svg class="ic"><use href="#i-check"/></svg></span>
+        </div>
         <div class="stat"><div class="big">4,000+</div><div class="cap">participants trained</div></div>
         <div class="stat"><div class="big">100+</div><div class="cap">companies</div></div>
         <div class="stat"><div class="big">20 yrs</div><div class="cap">commercial leadership</div></div>
