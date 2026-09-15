@@ -392,6 +392,58 @@ section{padding-block:60px}
 .dl dt .ic{width:14px;height:14px}
 .dl dd{margin:0;color:#c3cbec}
 
+/* ---------- pricing ---------- */
+.pricing{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.price-card{
+  position:relative;display:flex;flex-direction:column;gap:14px;
+  border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(180deg,rgba(17,26,61,.92),rgba(13,19,48,.92));
+  padding:30px 28px 28px;
+}
+.price-card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;border-radius:18px 18px 0 0;background:var(--c)}
+.price-card.feature{
+  border-color:transparent;
+  background:
+    linear-gradient(180deg,rgba(28,22,10,.86),rgba(20,15,8,.92)) padding-box,
+    var(--grad-hot) border-box;
+  border:2px solid transparent;
+  box-shadow:0 26px 60px rgba(255,106,44,.22);
+}
+.price-card.feature::before{display:none}
+.price-tier{display:flex;align-items:center;gap:9px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--c)}
+.price-amt{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.price-amt .cur{font-family:"Archivo",sans-serif;font-stretch:112%;font-weight:700;font-size:21px;color:var(--muted)}
+.price-amt .num{
+  font-family:"Archivo",sans-serif;font-stretch:120%;font-weight:900;
+  font-size:clamp(44px,7vw,62px);line-height:1;letter-spacing:-.02em;
+  font-variant-numeric:tabular-nums;color:var(--ink);
+}
+.price-card.feature .price-amt .num{background:var(--grad-hot);-webkit-background-clip:text;background-clip:text;color:transparent}
+.price-amt .per{font-size:14px;color:var(--muted);font-family:"IBM Plex Mono",monospace}
+.price-was{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted)}
+.price-was s{text-decoration-color:var(--magenta)}
+.price-list{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+.price-list li{display:flex;align-items:flex-start;gap:10px;font-size:15.5px;color:#c3cbec;line-height:1.5}
+.price-list .ic{color:var(--c);margin-top:4px;width:16px;height:16px;stroke-width:2.6}
+.price-card.feature .price-list .ic{color:var(--gold)}
+.save-flag{
+  position:absolute;top:-13px;right:22px;
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 13px;border-radius:999px;
+  background:var(--grad-hot);color:#1a0b16;
+  box-shadow:0 8px 24px rgba(255,62,165,.4);
+}
+.price-cta{margin-top:auto;padding-top:6px}
+.price-cta .btn{width:100%;justify-content:center}
+.price-note{
+  margin-top:18px;display:flex;align-items:flex-start;gap:11px;
+  border:1px solid var(--line);border-radius:14px;
+  background:rgba(34,227,238,.06);padding:16px 18px;
+  font-size:15px;color:#c3cbec;line-height:1.55;
+}
+.price-note .ic{color:var(--cyan);margin-top:3px}
+
 /* ---------- final cta ---------- */
 .cta-band{
   border-radius:22px;padding:clamp(32px,5.5vw,56px);
@@ -432,6 +484,7 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-block:36px 46px;
   .trainer{grid-template-columns:1fr;padding:26px}
   .trainer-side{width:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:24px}
   .two{grid-template-columns:1fr}
+  .pricing{grid-template-columns:1fr}
 }
 @media (max-width:560px){
   body{font-size:16px}
@@ -482,6 +535,8 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-block:36px 46px;
     <symbol id="i-cam" viewBox="0 0 24 24"><rect x="2.5" y="7" width="13" height="10" rx="2"/><path d="m15.5 11 6-3v8l-6-3z"/></symbol>
     <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
     <symbol id="i-wand" viewBox="0 0 24 24"><path d="M5 19 16.5 7.5"/><path d="m15 4 1.2 2.8L19 8l-2.8 1.2L15 12l-1.2-2.8L11 8l2.8-1.2L15 4Z"/><path d="M6 4.5v2.2M7.1 5.6H4.9"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M11.6 3H20a1 1 0 0 1 1 1v8.4a2 2 0 0 1-.6 1.4l-7 7a2 2 0 0 1-2.8 0l-6.4-6.4a2 2 0 0 1 0-2.8l7-7A2 2 0 0 1 11.6 3Z"/><circle cx="16.4" cy="7.6" r="1.6"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24"><path d="m12 2.6 2.6 1.9 3.2-.1 1 3 2.6 1.8-1 3 1 3-2.6 1.8-1 3-3.2-.1L12 21.4l-2.6-1.9-3.2.1-1-3L2.6 14.8l1-3-1-3 2.6-1.8 1-3 3.2.1L12 2.6Z"/><path d="m8.8 12.2 2.2 2.2 4.2-4.6"/></symbol>
     <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M8 20v-6M12.6 20v-10M17.2 20v-14"/></symbol>
     <symbol id="i-seat" viewBox="0 0 24 24"><path d="M6 4v9h12V4"/><path d="M4 13h16l-2 7H6l-2-7Z"/><path d="M9 20v1.5M15 20v1.5"/></symbol>
   </defs>
@@ -514,6 +569,7 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-block:36px 46px;
           <span class="badge hi"><svg class="ic ic-sm"><use href="#i-bulb"/></svg>Beginner friendly</span>
           <span class="badge"><svg class="ic ic-sm"><use href="#i-clapper"/></svg>2-day hands-on workshop</span>
           <span class="badge"><svg class="ic ic-sm"><use href="#i-spark"/></svg>No experience needed</span>
+          <span class="badge hi"><svg class="ic ic-sm"><use href="#i-tag"/></svg>Early bird RM1,088</span>
         </div>
 
         <p class="lede">Learn to create AI short films, ads and music videos. Over two days you'll move from a plain idea to images, storyboards, cinematic scenes and talking avatars — and leave with a finished video you made yourself.</p>
@@ -973,9 +1029,55 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-block:36px 46px;
           <dt><svg class="ic"><use href="#i-bulb"/></svg>Level</dt><dd>Beginner friendly — no prior experience required</dd>
           <dt><svg class="ic"><use href="#i-laptop"/></svg>Bring</dt><dd>A laptop and headphones; a phone for reference clips is useful</dd>
           <dt><svg class="ic"><use href="#i-target"/></svg>Method</dt><dd>Demonstrations, guided hands-on practice, prompt exercises, project-based learning</dd>
+          <dt><svg class="ic"><use href="#i-tag"/></svg>Fee</dt><dd>RM1,088 early bird · RM1,688 normal (HRD Corp claimable)</dd>
         </dl>
       </div>
     </div>
+  </section>
+
+  <section id="pricing">
+    <div class="sec-head"><span class="ic-box"><svg class="ic ic-lg"><use href="#i-tag"/></svg></span><h2>Investment</h2><span class="rule"></span></div>
+
+    <div class="pricing">
+
+      <div class="price-card feature" style="--c:#ffd21e">
+        <span class="save-flag"><svg class="ic ic-sm"><use href="#i-spark"/></svg>Save RM600</span>
+        <span class="price-tier"><svg class="ic ic-sm"><use href="#i-badge"/></svg>Early Bird / Promo</span>
+        <div class="price-amt">
+          <span class="cur">RM</span><span class="num">1,088</span><span class="per">per participant</span>
+        </div>
+        <p class="price-was"><s>Normal RM1,688</s> — limited early-bird seats</p>
+        <ul class="price-list">
+          <li><svg class="ic"><use href="#i-check"/></svg>Full 2-day hands-on workshop, all 8 modules</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Your own finished AI video, coached end to end</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Prompt frameworks and workflow templates to keep</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Certificate of completion</li>
+        </ul>
+        <div class="price-cta">
+          <a class="btn" href="https://forms.gle/3udHDwkBLWH8DkLE7" target="_blank" rel="noopener">Claim early-bird seat <svg class="ic ic-sm"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="price-card" style="--c:#2ea8ff">
+        <span class="price-tier"><svg class="ic ic-sm"><use href="#i-tag"/></svg>Normal / HRD Corp Claimable</span>
+        <div class="price-amt">
+          <span class="cur">RM</span><span class="num">1,688</span><span class="per">per participant</span>
+        </div>
+        <p class="price-was">Standard rate after the early-bird period</p>
+        <ul class="price-list">
+          <li><svg class="ic"><use href="#i-check"/></svg>Everything in the early-bird package</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>HRD Corp claimable — SBL-Khas scheme</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Invoice and supporting documents for your claim</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Suitable for company-sponsored participants</li>
+        </ul>
+        <div class="price-cta">
+          <a class="btn btn-ghost" href="https://forms.gle/3udHDwkBLWH8DkLE7" target="_blank" rel="noopener">Register now <svg class="ic ic-sm"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="price-note"><svg class="ic ic-sm"><use href="#i-info"/></svg><span><strong>Employers:</strong> this programme is HRD Corp claimable, so registered employers can fund their team's seats through their levy. Email <a href="mailto:david@daction.com" style="color:var(--cyan)">david@daction.com</a> for a quotation or group rates.</span></p>
   </section>
 
   <section id="register">
@@ -984,7 +1086,7 @@ footer{border-top:1px solid var(--line);margin-top:64px;padding-block:36px 46px;
       <p class="eyebrow">31 Oct – 1 Nov 2026 · Kota Damansara</p>
       <h2>Same creativity.<span class="g">Bigger possibilities.</span></h2>
       <p>Two days, eight modules, and one finished video that's yours. Register through the form and we'll confirm your seat by email.</p>
-      <a class="btn" href="https://forms.gle/3udHDwkBLWH8DkLE7" target="_blank" rel="noopener">Join the workshop <svg class="ic ic-sm"><use href="#i-arrow"/></svg></a>
+      <a class="btn" href="https://forms.gle/3udHDwkBLWH8DkLE7" target="_blank" rel="noopener">Join the workshop — RM1,088 <svg class="ic ic-sm"><use href="#i-arrow"/></svg></a>
       <div class="cta-strip">
         <span><svg class="ic"><use href="#i-check"/></svg>No experience needed</span>
         <span><svg class="ic"><use href="#i-check"/></svg>Hands-on from hour one</span>
